@@ -16,5 +16,9 @@ file_mode = 0
 access = 2
 script = ExtResource("1_mqcjy")
 
+[node name="GraphEdit" type="GraphEdit" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="confirmed" from="FileDialog" to="FileDialog" method="_on_confirmed"]
-[connection signal="file_selected" from="FileDialog" to="FileDialog" method="_on_file_selected"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
