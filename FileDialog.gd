@@ -4,5 +4,5 @@ extends FileDialog
 func _ready():
 	pass # Replace with function body.
 
-func _on_confirmed():
-	print(current_file)
+func _on_file_selected(path):
+	print(path);

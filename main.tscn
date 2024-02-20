@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmswo6g7ksvcp"]
+[gd_scene load_steps=3 format=3 uid="uid://cmswo6g7ksvcp"]
 
 [ext_resource type="Script" path="res://FileDialog.gd" id="1_mqcjy"]
+[ext_resource type="Script" path="res://main.gd" id="1_ypthk"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_ypthk")
 
 [node name="FileDialog" type="FileDialog" parent="."]
 title = "Open a File"
