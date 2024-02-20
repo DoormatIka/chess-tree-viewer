@@ -1,24 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmswo6g7ksvcp"]
+[gd_scene load_steps=2 format=3 uid="uid://cmswo6g7ksvcp"]
 
-[ext_resource type="Script" path="res://FileDialog.gd" id="1_mqcjy"]
 [ext_resource type="Script" path="res://main.gd" id="1_ypthk"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ypthk")
 
-[node name="FileDialog" type="FileDialog" parent="."]
+[node name="load_tree_dialogue" type="FileDialog" parent="."]
 title = "Open a File"
 initial_position = 1
 size = Vector2i(890, 474)
-visible = true
 ok_button_text = "Open"
 file_mode = 0
 access = 2
-script = ExtResource("1_mqcjy")
 
-[node name="GraphEdit" type="GraphEdit" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="load_tree_button" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 198.0
+offset_bottom = 65.0
+text = "Load Tree File
+"
 
-[connection signal="confirmed" from="FileDialog" to="FileDialog" method="_on_confirmed"]
-[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
+[node name="tree_graph_edit" type="GraphEdit" parent="."]
+offset_left = 18.0
+offset_top = 71.0
+offset_right = 1124.0
+offset_bottom = 606.0
+scroll_offset = Vector2(-270, -151)
+
+[connection signal="file_selected" from="load_tree_dialogue" to="." method="_on_load_tree_file_selected"]
+[connection signal="pressed" from="load_tree_button" to="." method="_on_load_tree_button_pressed"]
