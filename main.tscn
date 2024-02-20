@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmswo6g7ksvcp"]
+
+[ext_resource type="Script" path="res://FileDialog.gd" id="1_mqcjy"]
+
+[node name="Main" type="Node2D"]
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+initial_position = 2
+size = Vector2i(600, 159)
+visible = true
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+script = ExtResource("1_mqcjy")
+
+[connection signal="confirmed" from="FileDialog" to="FileDialog" method="_on_confirmed"]
+[connection signal="file_selected" from="FileDialog" to="FileDialog" method="_on_file_selected"]
