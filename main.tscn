@@ -14,19 +14,25 @@ file_mode = 0
 access = 2
 
 [node name="load_tree_button" type="Button" parent="."]
-offset_left = 16.0
-offset_top = 14.0
-offset_right = 198.0
-offset_bottom = 65.0
+offset_left = 19.0
+offset_top = 39.0
+offset_right = 201.0
+offset_bottom = 90.0
 text = "Load Tree File
 "
 
 [node name="tree_graph_edit" type="GraphEdit" parent="."]
-offset_left = 18.0
-offset_top = 71.0
-offset_right = 1124.0
-offset_bottom = 606.0
+offset_left = 20.0
+offset_top = 100.0
+offset_right = 1126.0
+offset_bottom = 635.0
 scroll_offset = Vector2(-270, -151)
+snapping_distance = 10
+connection_lines_curvature = 0.2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 333)
+position_smoothing_enabled = true
 
 [connection signal="file_selected" from="load_tree_dialogue" to="." method="_on_load_tree_file_selected"]
 [connection signal="pressed" from="load_tree_button" to="." method="_on_load_tree_button_pressed"]
