@@ -34,6 +34,14 @@ connection_lines_antialiased = false
 zoom_min = 0.05
 zoom_max = 3.0
 
+[node name="BaseNode" type="GraphNode" parent="tree_graph_edit"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 151.0
+offset_right = 279.0
+offset_bottom = 206.0
+mouse_filter = 1
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(575, 333)
 position_smoothing_enabled = true
