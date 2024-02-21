@@ -56,17 +56,14 @@ func create_node(data: Dictionary, selected_key: String) -> GraphNode:
 	start_node.set_slot_type_left(0, 1)
 	start_node.set_slot_enabled_right(1, true)
 	start_node.set_slot_type_right(1, 1)
+
+	disable_process_and_physics(start_node)
+	disable_process_and_physics(start_control_left)
+	disable_process_and_physics(start_control_right)
 	
-	start_node.set_process(false)
-	start_node.set_physics_process(false)
-	start_control_left.set_process(false)
-	start_control_left.set_physics_process(false)
-	start_control_right.set_process(false)
-	start_control_right.set_physics_process(false)
-	
-	var _gui_input = func (ev: InputEvent):
-		if ev is InputEventMouseButton:
-			if ev.button_index == MOUSE_BUTTON_LEFT:
+	var _gui_input = func (event: InputEvent):
+		if event is InputEventMouseButton:
+			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 				run_through_node(data, start_node.name)
 				## every frame that the mouse is held down, this runs.
 	
@@ -79,3 +76,6 @@ func create_node(data: Dictionary, selected_key: String) -> GraphNode:
 	
 	return start_node
 	
+func disable_process_and_physics(node):
+	node.set_process(false)
+	node.set_physics_process(false)
