@@ -34,17 +34,18 @@ connection_lines_antialiased = false
 zoom_min = 0.05
 zoom_max = 3.0
 
-[node name="BaseNode" type="GraphNode" parent="tree_graph_edit"]
-layout_mode = 0
-offset_left = 270.0
-offset_top = 151.0
-offset_right = 279.0
-offset_bottom = 206.0
-mouse_filter = 1
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(575, 333)
 position_smoothing_enabled = true
 
+[node name="arrange_button" type="Button" parent="."]
+offset_left = 229.0
+offset_top = 37.0
+offset_right = 411.0
+offset_bottom = 88.0
+tooltip_text = "Make sure to deselect all nodes first!"
+text = "Arrange"
+
 [connection signal="file_selected" from="load_tree_dialogue" to="." method="_on_load_tree_file_selected"]
 [connection signal="pressed" from="load_tree_button" to="." method="_on_load_tree_button_pressed"]
+[connection signal="pressed" from="arrange_button" to="." method="_on_arrange_button_pressed"]

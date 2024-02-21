@@ -18,7 +18,7 @@ func _on_load_tree_file_selected(path):
 				"data2": ["data3", "kyunfire"],
 				"data3": ["data4", "data5", "data6"],
 			}
-			run_through_node(test, "top")
+			run_through_node(data_received, "top")
 		else:
 			print("Unexpected data")
 	else:
@@ -31,16 +31,14 @@ func run_through_node(data: Dictionary, selected_key: String):
 	
 	var node = tree_graph.get_node(selected_key) ## hot spot.
 	var start_node;
-	if !node:
+	if node == null:
 		start_node = create_node(data, selected_key)
-	else:
-		start_node = node
 	
 	for fen in data[selected_key]:
-		create_node(data, fen)
-		tree_graph.connect_node(fen, 0, selected_key, 0)
-	
-	tree_graph.arrange_nodes()
+		var sub_node = tree_graph.get_node(fen)
+		if sub_node == null:
+			create_node(data, fen)
+			tree_graph.connect_node(fen, 0, selected_key, 0)
 
 func _on_load_tree_button_pressed():
 	$load_tree_dialogue.popup_centered();
@@ -79,3 +77,7 @@ func create_node(data: Dictionary, selected_key: String) -> GraphNode:
 func disable_process_and_physics(node):
 	node.set_process(false)
 	node.set_physics_process(false)
+
+
+func _on_arrange_button_pressed():
+	tree_graph.arrange_nodes()
