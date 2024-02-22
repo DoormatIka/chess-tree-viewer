@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqvuy5atl5o46"]
+
+[ext_resource type="Script" path="res://graph_node.gd" id="1_n76ke"]
+
+[node name="GraphNode" type="GraphNode"]
+anchors_preset = -1
+anchor_top = 0.003
+anchor_bottom = 0.003
+offset_top = -1.944
+offset_right = 200.0
+offset_bottom = 89.056
+title = "placeholder"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_n76ke")
+
+[node name="Description" type="RichTextLabel" parent="."]
+layout_mode = 2
+fit_content = true

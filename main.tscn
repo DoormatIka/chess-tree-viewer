@@ -6,11 +6,11 @@
 script = ExtResource("1_ypthk")
 
 [node name="load_tree_dialogue" type="FileDialog" parent="."]
-title = "Open a File"
+title = "Open a Directory"
 initial_position = 1
 size = Vector2i(890, 474)
-ok_button_text = "Open"
-file_mode = 0
+ok_button_text = "Select Current Folder"
+file_mode = 2
 access = 2
 
 [node name="load_tree_button" type="Button" parent="."]
@@ -29,7 +29,6 @@ offset_right = 1126.0
 offset_bottom = 635.0
 scroll_offset = Vector2(-270, -151)
 snapping_distance = 10
-connection_lines_curvature = 0.2
 connection_lines_antialiased = false
 zoom_min = 0.05
 zoom_max = 3.0
@@ -46,6 +45,6 @@ offset_bottom = 88.0
 tooltip_text = "Make sure to deselect all nodes first!"
 text = "Arrange"
 
-[connection signal="file_selected" from="load_tree_dialogue" to="." method="_on_load_tree_file_selected"]
+[connection signal="dir_selected" from="load_tree_dialogue" to="." method="_on_load_tree_dialogue_dir_selected"]
 [connection signal="pressed" from="load_tree_button" to="." method="_on_load_tree_button_pressed"]
 [connection signal="pressed" from="arrange_button" to="." method="_on_arrange_button_pressed"]
