@@ -73,6 +73,15 @@ func create_node(connection_data: Dictionary, information_data: Dictionary, sele
 	start_node.add_child(start_control_right)
 	
 	tree_graph.add_child(start_node)
+	var info = information_data.get(selected_key)
+	if info != null:
+		start_node.change_desc(str(
+			"Evaluation: ", info.evaluation, "\n", 
+			"Best Move: ", info.best_move, "\n",
+			"Alpha: ", info.alpha, "\n",
+			"Beta: ", info.beta, "\n",
+			"Maximizing Player: ", info.is_maximizing_player
+		))
 	
 	return start_node
 	
